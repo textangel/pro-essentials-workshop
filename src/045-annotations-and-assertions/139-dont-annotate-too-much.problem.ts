@@ -3,15 +3,15 @@ import { Equal, Expect } from "@total-typescript/helpers";
 // CODE
 
 const isProblemOrSolution = (filename: string): boolean => {
-  const splitFilename: string[] = filename.split(".");
+  const splitFilename = filename.split(".");
 
-  const finalIndex: number = splitFilename.length - 1;
+  const finalIndex = splitFilename.length - 1;
 
-  const extension: string | undefined = splitFilename[finalIndex];
+  const extension = splitFilename[finalIndex];
 
-  const isProblem: boolean = extension === "problem";
+  const isProblem = extension === "problem";
 
-  const isSolution: boolean = extension === "solution";
+  const isSolution = extension === "solution";
 
   return isProblem || isSolution;
 };
@@ -24,9 +24,7 @@ type test1 = Expect<
 
 // CODE
 
-const users: {
-  name: string;
-}[] = [
+const users = [
   {
     name: "Waqas",
   },
@@ -35,16 +33,8 @@ const users: {
   },
 ];
 
-const usersWithIds: {
-  id: number;
-  name: string;
-}[] = users.map(
-  (
-    user: {
-      name: string;
-    },
-    index: number,
-  ) => ({
+const usersWithIds = users.map(
+  (user, index) => ({
     ...user,
     id: index,
   }),

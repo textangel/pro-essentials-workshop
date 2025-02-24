@@ -1,27 +1,22 @@
 import { it } from "vitest";
 
-const Method = {
-  GET: "GET",
-  POST: "POST",
-  PUT: "PUT",
-  DELETE: "DELETE",
-};
+enum Method {
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  DELETE = "DELETE",
+}
 
-const request = (url: string, method: "GET" | "POST" | "PUT" | "DELETE") => {
+const request = (url: string, method: Method) => {
   // ...
 };
 
 it("Should force you to use the enum values", () => {
+  request("https://example.com", Method.GET);
   request(
     "https://example.com",
     // @ts-expect-error
-    "GET",
-  );
-
-  request(
-    "https://example.com",
-    // @ts-expect-error
-    "POST",
+    Method.POST,
   );
 
   request("https://example.com", Method.GET);

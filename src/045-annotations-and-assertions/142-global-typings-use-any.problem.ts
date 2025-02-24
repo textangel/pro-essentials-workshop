@@ -1,9 +1,8 @@
 import { expect, it } from "vitest";
 
 const getObj = () => {
-  const obj = JSON.parse('{ "a": 123, "b": 456 }');
-
-  return obj;
+  const obj = JSON.parse('{ "a": 123, "b": 456 }')
+  return obj as typeof obj;
 };
 
 it("Should return an obj", () => {
@@ -13,6 +12,6 @@ it("Should return an obj", () => {
 
   expect(
     // @ts-expect-error c doesn't exist on obj
-    obj.c,
+    obj.c
   ).toEqual(undefined);
 });

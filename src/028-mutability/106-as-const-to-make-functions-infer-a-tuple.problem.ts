@@ -9,7 +9,7 @@ const fetchData = async () => {
 
   const data = await result.json();
 
-  return [undefined, data];
+  return [undefined, data] as const;
 };
 
 const example = async () => {

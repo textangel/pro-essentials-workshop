@@ -20,7 +20,7 @@ type MyUser = {
 };
 
 const user: MyUser = {
-  nme: "Katherine",
+  name: "Katherine",
 };
 
 // But sometimes that's not always possible
@@ -28,5 +28,7 @@ const user: MyUser = {
 type FunctionThatReturnsAString = () => string;
 
 const fn: FunctionThatReturnsAString = () => {
-  return 123;
+  return "hello";
 };
+
+fn();

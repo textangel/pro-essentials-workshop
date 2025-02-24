@@ -1,5 +1,5 @@
 import { Equal, Expect } from "@total-typescript/helpers";
-import { expect, it } from "vitest";
+import { assert, expect, it } from "vitest";
 
 const findUsersByName = (
   searchParams: { name?: string },
@@ -9,7 +9,7 @@ const findUsersByName = (
   }[],
 ) => {
   if (searchParams.name) {
-    return users.filter((user) => user.name.includes(searchParams.name));
+    return users.filter((user) => user.name.includes(searchParams.name!));
   }
 
   return users;

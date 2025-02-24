@@ -1,18 +1,20 @@
 import { expect, it } from "vitest";
 
-type APIResponse =
-  | {
-      data: {
-        id: string;
-      };
-    }
-  | {
-      error: string;
-    };
+type DataResponse = {
+  data: {
+    id: string;
+  };
+};
+
+type ErrorResponse = {
+  error: string;
+};
+
+type APIResponse = DataResponse | ErrorResponse;
 
 const handleResponse = (response: APIResponse) => {
   // How do we check if 'data' is in the response?
-  if (true) {
+  if ("data" in response) {
     return response.data.id;
   } else {
     throw new Error(response.error);

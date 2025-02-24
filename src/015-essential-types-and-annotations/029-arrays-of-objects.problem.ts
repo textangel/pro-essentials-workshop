@@ -1,10 +1,22 @@
+
+type Ingredient = {
+  name: string;
+  quantity: string;
+};
+
 type Recipe = {
   title: string;
+  ingredients: Ingredient[];
   instructions: string;
 };
 
 const processRecipe = (recipe: Recipe) => {
   // Do something with the recipe in here
+  console.log(recipe.title);
+  console.log(recipe.instructions);
+  for (const ingredient of recipe.ingredients) {
+    console.log(ingredient.name, ingredient.quantity);
+  }
 };
 
 processRecipe({

@@ -1,4 +1,6 @@
-const fn = (input: unknown) => {};
+const fn = (input: unknown) => {
+  input.fasd;
+};
 
 // Anything is assignable to unknown!
 fn("hello");

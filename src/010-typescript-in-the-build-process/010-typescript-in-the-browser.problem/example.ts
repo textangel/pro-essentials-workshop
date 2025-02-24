@@ -1,5 +1,8 @@
-const run = (message: string) => {
+export const run = (message: string) => {
   console.log(message);
 };
 
-run("Hello!");
+// Only run this when NOT testing:
+if (!process.env.VITEST) {
+  run("Hello!");
+} 

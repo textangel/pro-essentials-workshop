@@ -1,5 +1,9 @@
 import { Equal, Expect } from "@total-typescript/helpers";
 
+type Route = {
+  component: string;
+};
+
 const routes = {
   "/": {
     component: "Home",
@@ -9,7 +13,7 @@ const routes = {
     // @ts-expect-error
     search: "?foo=bar",
   },
-};
+} as const satisfies Record<string, Route>;
 
 // @ts-expect-error
 routes["/"].component = "About";
