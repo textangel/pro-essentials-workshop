@@ -8,6 +8,7 @@
     "skipLibCheck": true,
     "noEmit": true,
     "strict": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"]
   },
 }
